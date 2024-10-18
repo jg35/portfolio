@@ -16,7 +16,7 @@ export default function Home() {
       <div className="p-4 mt-6">
         {/* picture & headline */}
         <div className="flex items-center pb-8">
-          <div className="max-w-32 pr-4">
+          <div className="w-32 pr-4">
             <Image
               src={profilePic}
               width={330}
@@ -59,7 +59,7 @@ export default function Home() {
       </div>
 
       {/* you can also... */}
-      <div className="px-4">
+      <div className="px-4 py-8 mb-6">
         <p>
           You can also{" "}
           <a href="/download" target="_blank">
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
 
       {/* newsletter */}
-      <div className="my-8 bg-gradient-to-r from-limeLight to-lime py-3 px-4 text-blue">
+      <div className="bg-gradient-to-r from-limeLight to-lime py-3 px-4 text-blue">
         <p className="mb-3">
           If none of that appeals to you, why not sign up to my newsletter?&#42;
         </p>
