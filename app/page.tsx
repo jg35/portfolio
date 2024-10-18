@@ -16,7 +16,7 @@ export default function Home() {
       <div className="p-4 mt-6">
         {/* picture & headline */}
         <div className="flex items-center pb-8">
-          <div className="w-32 pr-4">
+          <div className="min-w-32 pr-4">
             <Image
               src={profilePic}
               width={330}
