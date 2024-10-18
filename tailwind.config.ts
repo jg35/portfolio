@@ -16,7 +16,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         blue: "#11489e",
         limeLight: "#e8ffdc",
-        lime: "#d8ffcs",
+        lime: "#d8ffc5",
       },
     },
   },
