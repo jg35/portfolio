@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+import { IBM_Plex_Mono } from "@next/font/google";
+
+const IbmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,11 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={IbmPlexMono.className}>
+      <body className="font-mono antialiased">
         {children}
+        <footer className="text-white text-center circular bg-blue pb-4 mt-4 w-full relative overflow-x-clip">
+          <small className="text-xs">
+            © 2024 by James Graham. All Rights Reserved.
+          </small>
+        </footer>
         <Analytics />
       </body>
     </html>

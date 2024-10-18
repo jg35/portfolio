@@ -1,101 +1,99 @@
 import Image from "next/image";
+import profilePic from "./me.png";
 
 export default function Home() {
+  const navItems = [
+    { id: 1, title: "Check out my projects", href: "/projects" },
+    { id: 2, title: "See where I've worked", href: "/work" },
+    { id: 3, title: "Steal my ideas", href: "/ideas" },
+    { id: 4, title: "Read my blog", href: "/blog" },
+    { id: 5, title: "Watch my travel vidoes!?", href: "/videos" },
+  ];
+  const emojis = ["😊", "😠"];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      {/* intro */}
+      <div className="p-4 mt-6">
+        {/* picture & headline */}
+        <div className="flex items-center pb-8">
+          <div className="max-w-32 pr-4">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={profilePic}
+              width={330}
+              height={326}
+              alt="Picture of the author"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <h1>
+            Hey!! {emojis[0]} I’m{" "}
+            <mark className="bg-lime rounded text-blue font-medium">James</mark>
+            , a full-stack dev based in London.
+          </h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        {/* welcome */}
+        <p className="mb-3">
+          Welcome to my{" "}
+          <mark className="bg-lime rounded text-blue font-medium">
+            new home
+          </mark>{" "}
+          on the web! ✨
+        </p>
+        <p>Here you can...</p>
+      </div>
+
+      {/* nav items... */}
+      <div className="flex flex-col mt-3">
+        {navItems.map((item) => (
+          <div
+            key={item.id}
+            className="inline mb-6 bg-gradient-to-r from-limeLight to-lime py-2 px-4 max-w-fit"
+          >
+            <a
+              href={item.href}
+              className="text-2xl font-medium text-blue no-underline"
+            >
+              {item.title}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {/* you can also... */}
+      <div className="px-4">
+        <p>
+          You can also{" "}
+          <a href="/download" target="_blank">
+            download my CV
+          </a>{" "}
+          or read about{" "}
+          <a href="/blog/how-i-got-into-coding">how I got into coding</a>.
+        </p>
+      </div>
+
+      {/* newsletter */}
+      <div className="my-8 bg-gradient-to-r from-limeLight to-lime py-3 px-4 text-blue">
+        <p className="mb-3">
+          If none of that appeals to you, why not sign up to my newsletter?&#42;
+        </p>
+        <input
+          type="text"
+          className="p-4 w-full"
+          placeholder="enter your email"
+        />
+        <small className="text-xs">
+          * It doesn’t actually exist yet, but stay tuned!{" "}
+        </small>
+      </div>
+      {/* CTA */}
+      <div className="px-4 py-8">
+        <p className="text-sm text-center">
+          Oh, you’re still here do you{" "}
+          <mark className="bg-lime rounded text-blue font-medium">
+            <a>like surprises</a>
+          </mark>
+          ?
+        </p>
+      </div>
+    </>
   );
 }

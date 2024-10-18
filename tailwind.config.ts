@@ -7,10 +7,16 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      mono: ["inherit"],
+    },
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        blue: "#11489e",
+        limeLight: "#e8ffdc",
+        lime: "#d8ffcs",
       },
     },
   },
