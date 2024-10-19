@@ -1,3 +1,5 @@
+import AnchorLink from "@/components/AnchorLink";
+
 export default function NavigationLayout({
   children,
 }: Readonly<{
@@ -9,7 +11,7 @@ export default function NavigationLayout({
         <nav>
           <ul>
             <li>
-              <a href="/work">work</a>
+              <AnchorLink href="/">home</AnchorLink>
             </li>
           </ul>
         </nav>
