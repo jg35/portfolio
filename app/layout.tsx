@@ -25,7 +25,12 @@ export default function RootLayout({
     <html lang="en" className={IbmPlexMono.className}>
       <body className="font-mono antialiased">
         {children}
-        <footer className="text-white text-center circular bg-blue pb-4 mt-4 w-full relative overflow-x-clip">
+        <footer className="text-white text-center circular bg-blue pb-4 mt-4 w-full fixed bottom-0 overflow-x-clip">
+          <div>
+            <a className="text-white" href="/">
+              go home
+            </a>
+          </div>
           <small className="text-xs">
             © 2024 by James Graham. All Rights Reserved.
           </small>
