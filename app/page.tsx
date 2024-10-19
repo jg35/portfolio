@@ -1,5 +1,6 @@
 import Image from "next/image";
 import profilePic from "./me.png";
+import AnchorLink from "@/components/AnchorLink";
 
 export default function Home() {
   const navItems = [
@@ -62,11 +63,14 @@ export default function Home() {
       <div className="px-4 py-8 mb-6">
         <p>
           You can also{" "}
-          <a href="/download" target="_blank">
-            download my CV
-          </a>{" "}
+          <AnchorLink href="/download" target="_blank">
+            download my cv
+          </AnchorLink>{" "}
           or read about{" "}
-          <a href="/blog/how-i-got-into-coding">how I got into coding</a>.
+          <AnchorLink href="/blog/how-i-got-into-coding">
+            how I got into coding
+          </AnchorLink>
+          .
         </p>
       </div>
 
@@ -89,7 +93,7 @@ export default function Home() {
         <p className="text-sm text-center">
           Oh, you’re still here do you{" "}
           <mark className="bg-lime rounded text-blue font-medium">
-            <a>like surprises</a>
+            <AnchorLink href="/surprise">like surprises</AnchorLink>
           </mark>
           ?
         </p>

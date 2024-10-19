@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
-  color: #11489e;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
 footer::before {
   content: "";
   position: absolute;
