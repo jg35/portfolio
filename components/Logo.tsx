@@ -20,11 +20,12 @@ export function Logo({
     white: "border-white",
     lime: "border-lime",
   };
+
   return (
     <div
-      className={`rotate-45 logo ${sizeClass[size]} ${borderClass[color]} ${
-        loading ? "loading" : ""
-      }`}
+      className={`rotate-45 logo ${size > 6 ? "big" : ""} ${sizeClass[size]} ${
+        borderClass[color]
+      } ${loading ? "loading" : ""}`}
     />
   );
 }
