@@ -7,11 +7,10 @@ export default function DownloadCVButton() {
   }
 
   return (
-    <button
-      className="gradient-lime text-black uppercase font-bold text-sm w-full py-1 mt-4"
-      onClick={donwloadCV}
-    >
-      Download service record (PDF)
-    </button>
+    <a download href="/static/james-graham-cv.pdf">
+      <button className="gradient-lime text-black uppercase font-bold text-sm w-full py-1 mt-4">
+        Download service record (PDF)
+      </button>
+    </a>
   );
 }
