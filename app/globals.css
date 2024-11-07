@@ -193,3 +193,8 @@
     opacity: 0.24387;
   }
 }
+
+.page-scroll-container {
+  overflow-y: auto;
+  max-height: calc(100vh - 60px);
+}

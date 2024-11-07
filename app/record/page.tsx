@@ -22,20 +22,20 @@ export default function Work() {
         </aside>
         <DownloadCVButton />
       </section>
-      <section className="mb-5">
+      <section>
         <h2 className="text-xl underline decoration-1 underline-offset-2 font-light mb-4">
           History ({jobs.length})
         </h2>
         {jobs.reverse().map((job) => (
-          <article className="my-4" key={job.id}>
+          <article className="mb-8" key={job.id}>
             <small className="font-bold">
               {getMonthYearStartEndDates(job.startDate, job.endDate)}
             </small>
-            <div className="p-2 mt-2 bg-gray bg-opacity-10">
+            <div className="px-4 py-3 mt-2 bg-gray bg-opacity-10">
               <Table data={job.data} />
               <Link
                 href={`record/${job.id}`}
-                className="mt-2 uppercase underline-offset-4 z-20"
+                className="mt-4 block uppercase underline underline-offset-4"
               >
                 Read internal report
               </Link>

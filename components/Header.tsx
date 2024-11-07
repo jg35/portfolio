@@ -7,7 +7,7 @@ export default function Header({
 }) {
   return (
     <header
-      className={`border-b-white border-b border-dashed py-1 w-full px-2 text-sm italic text-center`}
+      className={`border-b-white border-b border-dashed py-1 w-full px-2 text-sm italic text-center bg-green-dark sticky top-0 z-10`}
     >
       <small>{text}</small>
     </header>
