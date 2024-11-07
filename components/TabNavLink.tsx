@@ -13,7 +13,7 @@ export default function TabNavLink({ href, title }: TabNavLinkProps) {
 
   return (
     <li
-      className={`rounded-tl-xl rounded-tr-xl px-2 pb-0.5 mx-1.5 uppercase text-xl font-medium relative top-1 text-black flex items-center hover:bg-yellow hover:shadow-tab hover:transition ${
+      className={`rounded-tl-xl rounded-tr-xl pl-2 pr-3 pb-0.5 mx-1.5 uppercase text-xl font-medium relative top-1 text-black flex items-center hover:bg-yellow hover:shadow-tab hover:transition ${
         path === href ? activeClassname : ""
       }`}
     >

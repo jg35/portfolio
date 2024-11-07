@@ -5,12 +5,14 @@ export function Logo({
   color = "white",
   loading = false,
 }: {
-  size?: 4 | 24;
+  size?: 4 | 5 | 6 | 24;
   color?: "white" | "lime";
   loading?: boolean;
 }) {
   const sizeClass = {
     4: "size-4",
+    5: "size-5",
+    6: "size-6",
     24: "size-24",
   };
 

@@ -6,9 +6,10 @@ export const tabs = [
   },
   {
     id: 2,
-    title: "Service Record",
+    title: "Work Record",
     href: "/record",
   },
-  { id: 3, title: "Known Works", href: "/work" },
+  { id: 3, title: "Projects", href: "/projects" },
   { id: 4, title: "Secrets", href: "/secrets" },
+  { id: 5, title: "CCTV", href: "/cctv" },
 ];

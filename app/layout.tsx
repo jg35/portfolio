@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={IbmPlexMono.className}>
-      <body className="font-mono antialiased min-h-screen gradient-retro page flex text-white">
+      <body className="font-mono antialiased min-h-screen gradient-retro flex text-white">
         <div className="flex-1 flex flex-col uppercase">
           <Header />
           <main>{children}</main>
