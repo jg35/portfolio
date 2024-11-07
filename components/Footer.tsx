@@ -1,11 +1,12 @@
 import React from "react";
 
-const Footer: React.FC = () => {
+const Footer = ({ loggingIn = false }: { loggingIn?: boolean }) => {
+  const random = Math.round(Math.random() * 10000);
   return (
-    <footer className="text-white text-center circular bg-blue pb-4 mt-4 w-full overflow-x-clip relative">
-      <small className="text-xs">
-        © 2024 by James Graham. All Rights Reserved.
-      </small>
+    <footer className="mt-auto border-t-white border-t border-dashed py-2 bottom-0 w-full">
+      <span className="normal-case text-center text-xs block">
+        {loggingIn ? "Logging" : "Logged"} in as unknown operator #{random}
+      </span>
     </footer>
   );
 };

@@ -1,103 +1,46 @@
+import { citizenOverview, intelligenceReports } from "@/lib/data/tables";
+import { Table } from "@/components/Table";
+import Loading from "@/components/Loading";
 import Image from "next/image";
-import profilePic from "./me.png";
-import AnchorLink from "@/components/AnchorLink";
 
 export default function Home() {
-  const navItems = [
-    { id: 1, title: "Check out my projects", href: "/projects" },
-    { id: 2, title: "See where I've worked", href: "/work" },
-    { id: 3, title: "Steal my ideas", href: "/ideas" },
-    { id: 4, title: "Read my blog", href: "/blog" },
-    { id: 5, title: "Watch my travel vidoes!?", href: "/videos" },
-  ];
-  const emojis = ["😊", "😠"];
   return (
     <>
-      {/* intro */}
-      <div className="p-4 mt-6">
-        {/* picture & headline */}
-        <div className="flex items-center pb-8">
-          <div className="min-w-32 w-32 pr-4">
-            <Image
-              src={profilePic}
-              width={330}
-              height={326}
-              alt="Picture of the author"
-            />
+      <Loading />
+      <section className="border-b-white border-b border-dashed flex p-5 justify-between">
+        <div className="flex flex-col justify-between h-28">
+          <div>
+            <span className="font-light">
+              Profile:
+              <br />
+            </span>
+            <h1 className="text-2xl">James Graham</h1>
           </div>
-          <h1>
-            Hey!! {emojis[0]} I’m{" "}
-            <mark className="bg-lime rounded text-blue font-medium">James</mark>
-            , a full-stack dev based in London.
-          </h1>
+          <span className="bg-yellow p-1 text-black text-sm font-bold text-center">
+            Wanted for Service
+          </span>
         </div>
-        {/* welcome */}
-        <p className="mb-3">
-          Welcome to my{" "}
-          <mark className="bg-lime rounded text-blue font-medium">
-            new home
-          </mark>{" "}
-          on the web! ✨
-        </p>
-        <p>Here you can...</p>
-      </div>
-
-      {/* nav items... */}
-      <div className="flex flex-col mt-3">
-        {navItems.map((item) => (
-          <div
-            key={item.id}
-            className="inline mb-6 bg-gradient-to-r from-limeLight to-lime py-2 px-4 max-w-fit"
-          >
-            <a
-              href={item.href}
-              className="text-2xl font-medium text-blue no-underline"
-            >
-              {item.title}
-            </a>
-          </div>
-        ))}
-      </div>
-
-      {/* you can also... */}
-      <div className="px-4 py-8 mb-6">
-        <p>
-          You can also{" "}
-          <AnchorLink href="/download" target="_blank">
-            download my cv
-          </AnchorLink>{" "}
-          or read about{" "}
-          <AnchorLink href="/blog/how-i-got-into-coding">
-            how I got into coding
-          </AnchorLink>
-          .
-        </p>
-      </div>
-
-      {/* newsletter */}
-      <div className="bg-gradient-to-r from-limeLight to-lime py-3 px-4 text-blue">
-        <p className="mb-3">
-          If none of that appeals to you, why not sign up to my newsletter?&#42;
-        </p>
-        <input
-          type="text"
-          className="p-4 w-full"
-          placeholder="enter your email"
-        />
-        <small className="text-xs">
-          * It doesn’t actually exist yet, but stay tuned!{" "}
-        </small>
-      </div>
-      {/* CTA */}
-      <div className="px-4 py-8">
-        <p className="text-sm text-center">
-          Oh, you’re still here do you{" "}
-          <mark className="bg-lime rounded text-blue font-medium">
-            <AnchorLink href="/surprise">like surprises</AnchorLink>
-          </mark>
-          ?
-        </p>
-      </div>
+        <div className="relative crt">
+          <Image
+            width={112}
+            height={112}
+            alt="James"
+            src="/static/profile.png"
+          />
+        </div>
+      </section>
+      <section className="border-b-white border-b border-dashed p-5">
+        <h2 className="text-xl underline decoration-1 underline-offset-2 font-light mb-4">
+          Citizen Overview
+        </h2>
+        <Table data={citizenOverview} />
+      </section>
+      <section className="p-5">
+        <h2 className="text-xl underline decoration-1 underline-offset-2 font-light mb-4">
+          Intelligence Reports
+        </h2>
+        <Table data={intelligenceReports} />
+      </section>
     </>
   );
 }
